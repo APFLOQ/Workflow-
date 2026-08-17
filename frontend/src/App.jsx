@@ -20,7 +20,8 @@ import {
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-const API_BASE = "http://127.0.0.1:8000/api";
+// Production: Render.com backend | Local dev: http://127.0.0.1:8000/api
+const API_BASE = import.meta.env.VITE_API_BASE || "https://workflow-api.onrender.com/api";
 
 export default function App() {
   const [file, setFile] = useState(null);
